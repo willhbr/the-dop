@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div class="post-container">
+  <h1 class="post-title">
+    <a class="post-link" href="{{ page.url | absolute_url }}">
+      {{ page.title }}
+    </a>
+  </h1>
+
+  <div class="metadata">
+    <a href="/archive#{{ page.url }}">{{ page.date | date: "%B %-d, %Y" }}</a>
+    {% if page.podcastfile %}
+      &bull;
+      <a href="{{ page.podcastfile }}" download>Download</a>
+    {% endif %}
+    {% if page.duration %}
+      &bull;
+      {{ page.duration }}
+    {% endif %}
+  </div>
+
+  {% if page.podcastfile %}
+    <audio controls preload="none" src="{{ page.podcastfile }}"></audio>
+  {% endif %}
+  
+  <div class="post-body">
+    {{ page.content }}
+  </div>
+</div>

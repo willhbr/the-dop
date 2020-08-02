@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+{% for post in paginator.posts %}
+  <div class="post-container">
+    <h1 class="post-title">
+      <a class="post-link" href="{{ post.url | absolute_url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <div class="metadata">
+      <a href="/archive#{{ post.url }}">{{ post.date | date: "%B %-d, %Y" }}</a>
+      {% if post.podcastfile %}
+        &bull;
+        <a href="{{ post.podcastfile }}" download>Download</a>
+      {% endif %}
+      {% if post.duration %}
+        &bull;
+        {{ post.duration }}
+      {% endif %}
+    </div>
+
+    {% if post.podcastfile %}
+      <audio controls preload="none" src="{{ post.podcastfile }}"></audio>
+    {% endif %}
+    
+    <div class="post-body">
+      {{ post.content }}
+    </div>
+  </div>
+{% endfor %}
+
+{% include pagination.html %}

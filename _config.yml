@@ -1,0 +1,22 @@
+title: Almost Logical
+description: >
+  Three nerds talk about whatever takes their fancy
+
+url: "https://almostlogical.net"
+
+# Build settings
+markdown: kramdown
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+paginate: 10
+paginate_path: "/page/:num"
+plugins:
+  - jekyll-paginate
+
+# Podcast Feed Settings
+email:          thedoppodcast@gmail.com
+lang:           en
+author:         Jordan Griffiths, Joel Laity, Will Richardson
+copyright:      "&#x2117; &amp; &#xA9; 2020"
