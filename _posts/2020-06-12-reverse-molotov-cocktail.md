@@ -5,6 +5,7 @@ date: 2020-06-12
 layout: post
 podcastfile: "https://traffic.libsyn.com/secure/thedop/dop-1.mp3"
 length: "24918266"
+permalink: /episodes/1
 ---
 
 Jordan, Joel, and Will pitch each other on questionable Kickstarters.
