@@ -3,8 +3,8 @@ title: "Reverse Molotov Cocktail"
 duration: "39:28"
 date: 2020-06-12
 layout: post
-podcastfile: "https://traffic.libsyn.com/secure/thedop/dop-1.mp3"
-length: "24918266"
+podcastfile: "https://traffic.libsyn.com/secure/thedop/episode-1.mp3"
+length: "28734643"
 permalink: /episodes/1
 ---
 

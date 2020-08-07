@@ -18,6 +18,9 @@ layout: default
       {% if post.podcastfile %}
         &bull;
         <a href="{{ post.podcastfile }}" download>Download</a>
+        {% if post.length %}
+          ({{ post.length | divided_by: 1024 | divided_by: 1024 }} MB)
+        {% endif %}
       {% endif %}
       {% if post.duration %}
         &bull;
