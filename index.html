@@ -14,7 +14,7 @@ layout: default
     </h1>
 
     <div class="metadata">
-      <a href="/archive#{{ post.url }}">{{ post.date | date: "%B %-d, %Y" }}</a>
+      <a href="/episodes#{{ post.url }}">{{ post.date | date: "%B %-d, %Y" }}</a>
       {% if post.podcastfile %}
         &bull;
         <a href="{{ post.podcastfile }}" download>Download</a>
@@ -36,6 +36,8 @@ layout: default
       {{ post.content }}
     </div>
   </div>
+
+  <hr>
 {% endfor %}
 
 {% include pagination.html %}
