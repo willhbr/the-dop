@@ -2,36 +2,4 @@
 layout: default
 ---
 
-{% assign parts = page.permalink | split: '/' %}
-{% assign episode = parts[2] %}
-
-<div class="post-container">
-  <h1 class="post-title">
-    <a class="post-link" href="{{ page.url | absolute_url }}">
-      {{ episode }}: {{ page.title }}
-    </a>
-  </h1>
-
-  <div class="metadata">
-    <a href="/episodes#{{ page.url }}">{{ page.date | date: "%B %-d, %Y" }}</a>
-    {% if page.podcastfile %}
-      &bull;
-      <a href="{{ page.podcastfile }}" download>Download</a>
-      {% if page.length %}
-        ({{ page.length | divided_by: 1024 | divided_by: 1024 }} MB)
-      {% endif %}
-    {% endif %}
-    {% if page.duration %}
-      &bull;
-      {{ page.duration }}
-    {% endif %}
-  </div>
-
-  {% if page.podcastfile %}
-    <audio controls preload="none" src="{{ page.podcastfile }}"></audio>
-  {% endif %}
-  
-  <div class="post-body">
-    {{ page.content }}
-  </div>
-</div>
+{% include post.html post=page %}

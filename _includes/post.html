@@ -1,0 +1,35 @@
+{% assign post = include.post %}
+
+{% assign parts = post.permalink | split: '/' %}
+{% assign episode = parts[2] %}
+
+<div class="post-container">
+  <h1 class="post-title">
+    <a class="post-link" href="{{ post.url | absolute_url }}">
+      {{ episode }}: {{ post.title }}
+    </a>
+  </h1>
+
+  <div class="metadata">
+    <a href="/episodes#{{ post.url }}">{{ post.date | date: "%B %-d, %Y" }}</a>
+    {% if post.podcastfile %}
+      &bull;
+      <a href="{{ post.podcastfile }}" download>Download</a>
+      {% if post.length %}
+        ({{ post.length | divided_by: 1024 | divided_by: 1024 }} MB)
+      {% endif %}
+    {% endif %}
+    {% if post.duration %}
+      &bull;
+      {{ post.duration }}
+    {% endif %}
+  </div>
+
+  {% if post.podcastfile %}
+    <audio controls preload="none" src="{{ post.podcastfile }}"></audio>
+  {% endif %}
+  
+  <div class="post-body">
+    {{ post.content }}
+  </div>
+</div>

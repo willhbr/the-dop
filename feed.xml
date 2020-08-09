@@ -5,7 +5,7 @@
   <channel>
     <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml"/>
     <title>{{ site.title }}</title>
-    <description>{{ site.description | xml_escape | strip}}</description>
+    <description>{{ site.description | xml_escape | strip }}</description>
     <link>{{ site.url }}</link>
     <language>{{ site.lang }}</language>
     <managingEditor>{{ site.email }} ({{ site.author }})</managingEditor>
@@ -38,8 +38,8 @@
       <item>
         <title>{{ episode }}: {{ post.title | xml_escape }}</title>
         <enclosure url="{{ post.podcastfile }}" length="{{ post.length }}" type="audio/mp3"/>
-        <link>{{ site.url }}{{ post.url }}</link>
-        <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+        <link>{{ post.url | absolute_url }}</link>
+        <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <description>{{ post.excerpt | strip_html | xml_escape }}</description>
         <itunes:title>{{ episode }}: {{ post.title | xml_escape }}</itunes:title>

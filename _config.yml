@@ -10,7 +10,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-paginate: 10
+paginate: 30
 paginate_path: "/page/:num"
 plugins:
   - jekyll-paginate
