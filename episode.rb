@@ -3,7 +3,7 @@
 url = ARGV[0]
 
 puts "downloading #{url}"
-# `curl -sL '#{url}' -o /tmp/episode`
+`curl -sL '#{url}' -o /tmp/episode`
 
 episode_num = url.match(/episode-(\d+)[.]mp3/)[1]
 
